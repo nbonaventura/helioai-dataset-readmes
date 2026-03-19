@@ -68,7 +68,7 @@ Instructions on how to use the model(s) are given in this [notebook](<LINK_TO_NO
 There are two sets of system requirements:
 1. Requirements to *create* the data products. These can be found in the [GitHub Repository](<LINK_TO_GITHUB_REPO>).
 2. Requirements for *using* the data products
-   1. To use the data, any modern computer with sufficient storage is sufficient.
+   1. To use the data, any modern computer with enough storage is sufficient.
    2. To use the model(s), see the table below
 
 | Component | Minimum |
