@@ -1,7 +1,7 @@
 **1 Download Instructions**
 ------------------------
 
-Data is stored on Amazon Web Services (AWS). Data access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
+Data is stored on Amazon Web Services (AWS). Data access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 Listing files is done by e.g.:
 ```
@@ -14,7 +14,7 @@ aws s3 cp --no-sign-request <AWS PATH> <LOCAL PATH> --recursive
 ```
 You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data.
 
-| Data Sample | AWS Path | Size | Download time (@100 Mbps) |
+| Data Product | AWS Path | Size | Download time (@100 Mbps) |
 |-------------|----------|------|---------------------------|
 | Raw | `s3://nasa-radiant-data/helioai-datasets/hl-geo/raw_data/` | 91 GB | 2 hours |
 | Processed | `s3://nasa-radiant-data/helioai-datasets/hl-geo/processed_data/` | 123 GB | 3 hours |
