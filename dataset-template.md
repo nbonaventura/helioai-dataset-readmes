@@ -1,4 +1,4 @@
-**1 Download Instructions**
+**1 Access Instructions**
 ------------------------
 
 Data is stored on Amazon Web Services (AWS). Data access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
