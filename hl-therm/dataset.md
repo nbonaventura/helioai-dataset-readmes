@@ -54,7 +54,7 @@ Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable sele
 
 ### Example TFT Inference Data (1 MB)
 - AWS PATH: `hl-therm/models/sample_inputs_tft.pt`
-- Description: This file is a PyTorch dictionary containing a sample of everything needed to run TFT inference, shown in the table below. The first three keys (rows) are the direct **model inputs**. The rest is **metadata** for evaluation and denormalization. All values are already preprocessed (scaled/normalized) and ready to feed directly into the TFT.
+- Description: This file is a PyTorch dictionary containing a sample of everything needed to run TFT inference, shown in the table below. The first three keys (rows) are the direct **model inputs**. The rest is **metadata** for evaluation and denormalization. All values are already preprocessed (scaled/normalized) and ready to feed directly into the TFT. `N` is the number of samples, in this case `N=100`. 
 
 
 | Key | Shape | Description |
