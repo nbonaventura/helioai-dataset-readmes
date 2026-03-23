@@ -22,7 +22,7 @@ You will need to replace `<AWS PATH>` with the path to the data sample you want 
 
 
 # 2 Dataset Description
-
+This dataset corresponds to Thermospheric Density Continual Learning challenge. It is what was used to create the 2024 iteration of KARMAN. There are three main components: raw data, processed data, and machine learning models.
 
 There are three levels of description available for this dataset:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
@@ -31,7 +31,7 @@ There are three levels of description available for this dataset:
 
 
 
-**This dataset corresponds to Thermospheric Density Continual Learning challenge. It is what was used to create the 2024 iteration of KARMAN. There are three main components: raw data, processed data, and machine learning models.**
+
 
 ## 2.1 Models
 
@@ -42,7 +42,7 @@ Two ML models are included in the models directory, a forecasting model and a no
 - Usage Instructions: Instructions on how to use the TFT model are given in this [colab notbook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_forecast_example.ipynb).
 - Type: Temporal Fusion Transformer — forecasts density using ~7 days of space-weather history
 Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable selection networks)
-- Accuracy: 14.936% MAPE on validation set
+- Accuracy: 14.94% MAPE on validation set
 
 ### Nowcasting Model (0.1 MB)
 - AWS PATH: `hl-therm/models/karman_mlp_nowcast_mape_15.14_params_35585.torch` 
@@ -52,9 +52,9 @@ Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable sele
 - Approach: log_exp_residual — predicts a correction (residual) on top of an exponential atmosphere baseline, in log-space
 - Accuracy: 15.14% MAPE on validation set
 
-### Example Inference Data (1 MB)
+### Example TFT Inference Data (1 MB)
 - AWS PATH: `hl-therm/models/sample_inputs_tft.pt`
-- Description: This file is a PyTorch dictionary containing a sample of everything needed to run TFT inference, shown in the table below. The first three rows (keys) are the direct model inputs. The rest is metadata for evaluation and denormalization.
+- Description: This file is a PyTorch dictionary containing a sample of everything needed to run TFT inference, shown in the table below. The first three keys (rows) are the direct **model inputs**. The rest is **metadata** for evaluation and denormalization. All values are already preprocessed (scaled/normalized) and ready to feed directly into the TFT.
 
 
 | Key | Shape | Description |
@@ -68,14 +68,42 @@ Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable sele
 | `dates` | list of N strings | Timestamp for each sample |
 | `normalization_dict` | dict | The scaling parameters (min/max, quantile transforms) used during preprocessing |
 
-The first three keys are the direct **model inputs**. The rest is **metadata** for evaluation and denormalization. All values are already preprocessed (scaled/normalized) and ready to feed directly into the TFT.
+
 
 
 ## 2.2 Processed Data
 
-The raw data undergoes processing to create a structured dataset suitable for training machine learning models. This involves cleaning, filtering, applying quality standards and transforming the raw measurements into a format that can be used for model training. 
+The raw data (see below) is processed to create a structured dataset suitable for training machine learning models. This involves cleaning, filtering, applying quality standards and transforming the raw measurements into a format that can be used for model training. 
 
-Raw data is processed to enable the training of the ML models. There are various stages to this but the end goal is to have a collection of training examples that pair together a measurements of the density from the satellites with the solar and geomagnetic conditions at that moment in time. Each of the raw data inputs is first separately processed to standardise, filter and transform it, before being combined together so it can be used to create the models. 
+### OMNIWEB data (3.1 GB)
+- AWS PATH: `hl-therm/processed_data/physical-drivers-processed/OMNIWEB/{YYYY}/{SUBSET}_omni_{YYYY}_{MM}.parquet`
+- Available Years: 2000-2025
+- Available subsets: `indices`, `magnetic_field`, `solar_wind_velocity`
+
+### SOHO data (0.5GB)
+- AWS PATH: `hl-therm/processed_data/physical-drivers-processed/SOHO/{YYYY}/{YY}_{MM}_{DD}_v4.00.parquet`
+- Available Years: 2000-2025
+
+### NRLMSISE-00 data (4.6 GB)
+- AWS PATH: `hl-therm/processed_data/physical-drivers-processed/nrlmsise00_time_series.csv`
+
+### GOES data (0.7 GB)
+- AWS PATH: `hl-therm/processed_data/satellite-data-processed/GOES/{YYYY}/goes_irradiance_{YYYY}_{WAVELENGTH}nm.parquet`
+- Available wavelengths: 256, 284, 304, 1175, 1216, 1335, 1405
+- Available Years: 2010-2024
+
+### Tudelft data (11 GB)
+- AWS PATH: `hl-therm/processed_data/satellite-data-processed/tudelft/version_0{VERSION}/{SATELLITE}_data/`
+- Available satellites: 
+    - `GOCE` (version 1), years 2009-2013
+    - `Swarm`(version 1), years 2013-2025
+    - `CHAMP`(version 2), years 2000-2010
+    - `GRACE-FO` (version 2), years 2018-2025 
+    - `GRACE`(version 2), years 2002-2017
+
+
+### Space Weather Indices & Proxies data (0.2 MB)
+- AWS PATH: `hl-therm/processed_data/sw-indices/combined_incides.parquet`
 
 ## 2.3 Raw Data 
 
