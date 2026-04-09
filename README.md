@@ -7,4 +7,5 @@ Currently implemented projects:
 |---------------|---------------|
 | hl-geo | Geoeffectiveness Continual Learning |
 | hl-therm | Thermospheric Density Continual Learning | 
+| us-fdlx-ard | Virtual EVE — Solar Irradiance Prediction |
 
