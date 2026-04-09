@@ -11,7 +11,7 @@ Downloading files is done by e.g.
 ```
 aws s3 cp --no-sign-request s3://nasa-radiant-data/helioai-datasets/<AWS PATH> <LOCAL PATH> --recursive
 ```
-You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data).
+You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data.
 
 | Data Product               | AWS Path    | Size | Download time (@100 Mbps) |
 |-----------------------|-------------|-----------|----------|
@@ -37,23 +37,28 @@ The raw data (see below) is processed to create a structured dataset suitable fo
 
 ### OMNIWEB data (3.1 GB)
 - AWS PATH: `hl-therm/processed_data/physical-drivers-processed/OMNIWEB/{YYYY}/{SUBSET}_omni_{YYYY}_{MM}.parquet`
+- Format: tabular (pandas dataframe)
 - Available Years: 2000-2025
 - Available subsets: `indices`, `magnetic_field`, `solar_wind_velocity`
 
 ### SOHO data (0.5GB)
 - AWS PATH: `hl-therm/processed_data/physical-drivers-processed/SOHO/{YYYY}/{YY}_{MM}_{DD}_v4.00.parquet`
+- Format: tabular (pandas dataframe)
 - Available Years: 2000-2025
 
 ### NRLMSISE-00 data (4.6 GB)
 - AWS PATH: `hl-therm/processed_data/physical-drivers-processed/nrlmsise00_time_series.csv`
+- Format: tabular (pandas dataframe)
 
 ### GOES data (0.7 GB)
 - AWS PATH: `hl-therm/processed_data/satellite-data-processed/GOES/{YYYY}/goes_irradiance_{YYYY}_{WAVELENGTH}nm.parquet`
+- Format: tabular (pandas dataframe)
 - Available wavelengths: 256, 284, 304, 1175, 1216, 1335, 1405
 - Available Years: 2010-2024
 
 ### Tudelft data (11 GB)
 - AWS PATH: `hl-therm/processed_data/satellite-data-processed/tudelft/version_0{VERSION}/{SATELLITE}_data/`
+- Format: tabular (pandas dataframe)
 - Available satellites: 
     - `GOCE` (version 1), years 2009-2013
     - `Swarm`(version 1), years 2013-2025
@@ -64,6 +69,8 @@ The raw data (see below) is processed to create a structured dataset suitable fo
 
 ### Space Weather Indices & Proxies data (0.2 MB)
 - AWS PATH: `hl-therm/processed_data/sw-indices/combined_incides.parquet`
+- Format: tabular (pandas dataframe)
+
 
 ## 2.2 Raw Data 
 
