@@ -1,7 +1,6 @@
-**1 Access Instructions**
-------------------------
+# 1 Access Instructions
 
-Data is stored on Amazon Web Services (AWS). Data access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+Data is stored on Amazon Web Services (AWS). Access is through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 Listing files is done by e.g.:
 ```
@@ -16,21 +15,19 @@ You will need to replace `<AWS PATH>` with the path to the data sample you want 
 
 | Data Product | AWS Path | Size | Download time (@100 Mbps) |
 |-------------|----------|------|---------------------------|
-| Raw | `s3://nasa-radiant-data/helioai-datasets/hl-geo/raw_data/` | 91 GB | 2 hours |
 | Processed | `s3://nasa-radiant-data/helioai-datasets/hl-geo/processed_data/` | 123 GB | 3 hours |
-| Models | `s3://nasa-radiant-data/helioai-datasets/hl-geo/models/` | 124 MB | ~ 10 seconds |
+| Raw | `s3://nasa-radiant-data/helioai-datasets/hl-geo/raw_data/` | 91 GB | 2 hours |
 
 
 
-**2 Dataset Description**
------------------------
+# 2 Dataset Description
 
 There are three levels of description available for this dataset:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
 - A detailed description (see the [Technical Memorandum](https://helioai.org/dev/artifact/89d1911b-7803-44e7-b792-076edb2dc5ed/details)).
 - The full source code used to process the data and create the models (see the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/)).
 
-**Project summary**
+## Project summary
 
 This project forecasts geomagnetic perturbations at ground stations worldwide using two complementary ML models:
 
@@ -40,10 +37,24 @@ conditions
 ~30-minute lead time
 
 Together they form a two-stage forecasting pipeline: SHEATH offers early situational awareness from the Sun itself, while DAGGER-CL provides high-fidelity,
-station-level nowcasts once the solar wind is measured in situ. The dataset includes the raw inputs, processed training data, and trained model weights for both components. 
+station-level nowcasts once the solar wind is measured in situ. The dataset includes the raw inputs and processed training data.
 
 
-**2.1 Raw Data**
+
+# 2.1 Processed Data
+
+The raw data undergoes processing to create a structured dataset suitable for training machine learning models. This involves cleaning, filtering, applying quality standards and transforming the raw measurements into a format that can be used for model training. The processing steps include:
+
+  - Cleaning: Replace sentinel fill-values with NaN; rename columns to a common schema across ACE/DSCOVR/OMNI
+  - Resampling: 1-hour for SHEATH, 1-minute for DAGGER-CL
+  - Merging: Temporally align solar wind data with geomagnetic indices using backward-looking asof join
+  - Derived features: Compute clock angle, trig combinations, dynamic pressure, electric field proxy, dipole tilt (~26 total solar wind features)
+  - SDO processing (SHEATH only): Backtrack L1 time to Sun-observation time; segment AIA 193Å into coronal holes / active regions via GMM; extract mean
+  intensities per region across all 12 channels (~26 SDO features)
+  - Windowing (DAGGER-CL only): Slice 90-minute lookback windows as input; target is SuperMAG dB components at a future timestamp
+  - Scaling: Yeo-Johnson power transform + z-score (DAGGER-CL) or z-score only (SHEATH); scalers fitted on training set and saved for inference
+
+## 2.2 Raw Data
 
 - ACE & DSCOVR: In-situ solar wind measurements from spacecraft at the L1 Lagrange point (~1.5M km sunward of Earth). They measure the speed, density, and
 temperature of the solar wind plasma, plus the interplanetary magnetic field (IMF) vector. DSCOVR replaced ACE as the primary real-time monitor in 2016; the
@@ -62,31 +73,8 @@ high-latitude activity), F10.7 solar radio flux, and sunspot number. Used as add
 
 
 
-**2.2 Processed Data**
+# 3 System Requirements
 
-The raw data undergoes processing to create a structured dataset suitable for training machine learning models. This involves cleaning, filtering, applying quality standards and transforming the raw measurements into a format that can be used for model training. The processing steps include:
-
-  - Cleaning: Replace sentinel fill-values with NaN; rename columns to a common schema across ACE/DSCOVR/OMNI
-  - Resampling: 1-hour for SHEATH, 1-minute for DAGGER-CL
-  - Merging: Temporally align solar wind data with geomagnetic indices using backward-looking asof join
-  - Derived features: Compute clock angle, trig combinations, dynamic pressure, electric field proxy, dipole tilt (~26 total solar wind features)
-  - SDO processing (SHEATH only): Backtrack L1 time to Sun-observation time; segment AIA 193Å into coronal holes / active regions via GMM; extract mean
-  intensities per region across all 12 channels (~26 SDO features)
-  - Windowing (DAGGER-CL only): Slice 90-minute lookback windows as input; target is SuperMAG dB components at a future timestamp
-  - Scaling: Yeo-Johnson power transform + z-score (DAGGER-CL) or z-score only (SHEATH); scalers fitted on training set and saved for inference
-
-**2.3 Models**
-
-The two ML models, SHEATH and DAGGER-CL, are designed for complementary forecasting tasks. They are both stored in AWS. 
-
-Instructions on how to use the SHEATH model are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-GeoCL/blob/main/public/sheath_inference_quickstart.ipynb).
-The DAGGER-CL is more complex to use as it requires a pipeline to be setup, details can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
-
-**3 System Requirements**
------------------------
 There are two sets of system requirements:
 1. Requirements to *create* the data products. These can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
-2. Requirements for *using* the data products
-   1. To use the raw and processeddata, any modern computer with enough storage is sufficient.
-   2. To use the SHEATH model, any modern computer will do (no CPU necessary)
-   3. The DAGGER-CL model is part of a more complex pipeline, so the requirements depend on how you want to use it. See the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/) for details. 
+2. Requirements for *using* the data products: to use the raw and processed data, any modern computer with enough storage is sufficient.
