@@ -11,54 +11,49 @@ Downloading files is done by e.g.
 ```
 aws s3 cp --no-sign-request s3://nasa-radiant-data/helioai-datasets/<AWS PATH> <LOCAL PATH> --recursive
 ```
-You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data.
+You will need to replace `<AWS PATH>` with the path to the file or directory you want to download (see below) and `<LOCAL PATH>` with the path on your local machine where you want to save the data.
 
 <!-- Add/remove rows as necessary for your project
 The ideal case is that within each of these categories, data are uniformly structured.
 For example, "processed" may correspond to train/test/validation data, in which we expect a tabular format (consistent column names, different rows) for each training example. 
 Different models may have different train/test/validation sets, this can be explained -->
 
-| Data Product | AWS Path | Size | Download time (@100 Mbps) |
-|-------------|----------|------|---------------------------|
-| Processed | `<DATASET_NAME>/processed_data/` | | |
-| Raw | `<DATASET_NAME>/raw_data/` | | |
-| Results | `<DATASET_NAME>/results/` | | |
-| Miscellaneous | `<DATASET_NAME>/miscellaneous/` | | |
 
 
 
-# 2 Dataset Description
 
-<!-- Add a brief description of the dataset and the challenge it addresses -->
+# 2 Model Description
 
-There are three levels of description available for this dataset:
+<!-- Add a brief description of the model and the challenge it addresses -->
+
+There are three levels of description available for this model:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
 - A detailed description (see the [Technical Memorandum](<LINK_TO_TECHNICAL_MEMORANDUM>)).
 - The full source code used to process the data and create the models (see the [GitHub Repository](<LINK_TO_GITHUB_REPO>)).
 
 
 
+## 2.1 Model 1
+
+<!-- Describe the ML models included. For each model, include:
+     - Model architecture
+     - Purpose (nowcasting, forecasting, classification, etc.)
+     - Any caveats on intended use -->
+
+<!-- If applicable, link to inference notebooks or usage examples -->
+Instructions on how to use the model(s) are given in this [notebook](<LINK_TO_NOTEBOOK>).
+
+## 2.2 Model 2
+Lorem Ipsum 
 
 
-
-## 2.1 Processed Data
-
-<!-- Briefly Describe the processing pipeline applied to the raw data. Include:
-     - What transformations are applied (cleaning, filtering, standardization, etc.)
-     - What the final training examples look like (input/output pairs)
-     - How the different raw sources are combined 
-     - If approproate, this section will point to the train/test/validation sets -->
-
-## 2.2 Raw Data
-
-<!-- Appropriate description -->
 
 
 # 3. System Requirements
 
 There are two sets of system requirements:
-1. Requirements to *create* the data products. These can be found in the [GitHub Repository](<LINK_TO_GITHUB_REPO>).
-2. Requirements for *using* the data products
+1. Requirements to *create* the model. These can be found in the [GitHub Repository](<LINK_TO_GITHUB_REPO>).
+2. Requirements for *using* the model.
 
 
 | Component | Minimum |
