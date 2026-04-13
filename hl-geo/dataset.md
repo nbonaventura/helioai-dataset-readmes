@@ -1,6 +1,6 @@
 # 1 Access Instructions
 
-Data is stored on Amazon Web Services (AWS). Access is through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+Data is stored on Amazon Web Services (AWS). Data access is given via the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 Listing files is done by e.g.:
 ```
@@ -22,26 +22,15 @@ You will need to replace `<AWS PATH>` with the path to the data sample you want 
 
 # 2 Dataset Description
 
+This dataset corresponds to the Geoeffectiveness Continuous Learning project from Heliolab 2024. There are three main components: models, processed data, and raw data.
+
 There are three levels of description available for this dataset:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
 - A detailed description (see the [Technical Memorandum](https://helioai.org/dev/artifact/89d1911b-7803-44e7-b792-076edb2dc5ed/details)).
 - The full source code used to process the data and create the models (see the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/)).
 
-## Project summary
 
-This project forecasts geomagnetic perturbations at ground stations worldwide using two complementary ML models:
-
-- SHEATH: An MLP that translates solar disk imagery (SDO) into solar wind parameter predictions at L1, providing multi-day advance warning of incoming
-conditions
-- DAGGER-CL: A GRU that takes real-time solar wind measurements (ACE/DSCOVR) and predicts magnetic field perturbations (dBe, dBn) at ~535 ground stations with
-~30-minute lead time
-
-Together they form a two-stage forecasting pipeline: SHEATH offers early situational awareness from the Sun itself, while DAGGER-CL provides high-fidelity,
-station-level nowcasts once the solar wind is measured in situ. The dataset includes the raw inputs and processed training data.
-
-
-
-# 2.1 Processed Data
+## 2.1 Processed Data
 
 The raw data undergoes processing to create a structured dataset suitable for training machine learning models. This involves cleaning, filtering, applying quality standards and transforming the raw measurements into a format that can be used for model training. The processing steps include:
 
@@ -53,6 +42,57 @@ The raw data undergoes processing to create a structured dataset suitable for tr
   intensities per region across all 12 channels (~26 SDO features)
   - Windowing (DAGGER-CL only): Slice 90-minute lookback windows as input; target is SuperMAG dB components at a future timestamp
   - Scaling: Yeo-Johnson power transform + z-score (DAGGER-CL) or z-score only (SHEATH); scalers fitted on training set and saved for inference
+
+
+### ACE (55 GB)
+- AWS PATH: `hl-geo/processed_data/ACE/` 
+- Contents: Formatted time-series with fields: `bt`, `bx_gsm`, `by_gsm`, `bz_gsm`, `proton_speed`, `proton_density`, `proton_temperature`. Historical data available from 2001
+- Train and test set CSV file available.
+
+### DSCOVR (14 GB)
+- AWS PATH: `hl-geo/processed_data/DSCOVR/`
+- Content: formatted time-series with fields: `bt`, `bx_gsm`, `by_gsm`, `bz_gsm`, `proton_speed`, `proton_density`, `proton_temperature`. Historical data
+  available from 2016-07-26.
+- Train and test set CSV file available.
+
+
+### OMNI (0.5 MB)
+- AWS PATH: `hl-geo/processed_data/OMNI/omniweb_formatted_2000.h5`
+- Content: ground-truth solar wind labels that SHEATH learns to predict from SDO imagery. 
+
+### SuperMAG (40 GB)
+- AWS PATH: `hl-geo/processed_data/SuperMAG/`
+- Content: 535 stations x 3 components (dBe, dBn, dBz) of ground magnetic perturbations in nT, stored per-minute, with NaN masks for missing stations,
+  StandardScaler-normalized, and time-aligned to ACE/DSCOVR inputs via mapping files. magnetic field components.
+
+### SDO (2 GB)
+- AWS PATH: `hl-geo/processed_data/sdo/`
+- per-timestamp CSV of 26 features extracted from raw SDO data (from 10 AIA and 3 HMI channels)
+
+### SDO Embeddings (11 MB)
+- AWS PATH: `hl-geo/processed_data/sdoembeddings/omniweb_back_tracked_ballistic.csv`
+    -   The full pre-split dataset mapping SDO embeddings to OMNI solar wind targets. Each row is one timestamp. Columns:
+        - Col 0: OMNI time (datetime at L1)
+        - Col 1: SDO time (datetime after ballistic backtracking — used for temporal splitting)
+        - Col 2: H5 latent index (integer index into sdo_latent_dataset_21504.h5["latent"] to fetch the 21,504-d embedding)
+        - Cols 3–9: The 7 OMNI target variables — Speed, Density, Temperature, Bt, Bx, By, Bz
+- AWS PATH: `hl-geo/processed_data/sdoembeddings/scaler_targets.json`
+    -   A serialized MinMaxScaler fitted on the 7 target columns during training. Keys: min, scale, data_min, data_max, feature_range, n_features (7), feature_names. Used to inverse-transform
+  predictions back to physical units.
+- AWS PATH: `hl-geo/processed_data/sdoembeddings/sheath_train_set.csv`
+    -   Training split — same columns as above. Everything not in the test intervals or validation years.
+- AWS PATH: `hl-geo/processed_data/sdoembeddings/sheath_val_set.csv`
+    -   Validation split — rows where SDO time falls in years 2014 or 2017 (excluding test storm intervals).
+- AWS PATH: `hl-geo/processed_data/sdoembeddings/sheath_test_set.csv`
+    -   Test split — rows from four specific geomagnetic storm periods:
+        - 2011-08-04 to 2011-08-08
+        - 2017-09-26 to 2017-09-29
+        - 2018-08-13 to 2018-08-17
+        - 2019-08-29 to 2019-09-01
+
+### SHEATH (2 GB)
+- AWS Path: `hl-geo/processed_data/sheath/`
+- Training and test data for the SHEATH model.
 
 ## 2.2 Raw Data
 
@@ -77,4 +117,7 @@ high-latitude activity), F10.7 solar radio flux, and sunspot number. Used as add
 
 There are two sets of system requirements:
 1. Requirements to *create* the data products. These can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
-2. Requirements for *using* the data products: to use the raw and processed data, any modern computer with enough storage is sufficient.
+2. Requirements for *using* the data products
+   1. To use the raw and processeddata, any modern computer with enough storage is sufficient.
+   2. To use the SHEATH model, any modern computer will do (no CPU necessary)
+   3. The DAGGER-CL model is part of a more complex pipeline, so the requirements depend on how you want to use it. See the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/) for details. 

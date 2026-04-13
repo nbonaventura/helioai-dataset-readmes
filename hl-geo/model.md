@@ -38,10 +38,26 @@ station-level nowcasts once the solar wind is measured in situ. The dataset incl
 
 ## 2.1 Models
 
-The two ML models, SHEATH and DAGGER-CL, are designed for complementary forecasting tasks. They are both stored in AWS. 
+Two ML models are available: SHEATH and DAGGER-CL. They are designed for complementary forecasting tasks. 
+- SHEATH: An MLP that translates solar disk imagery (SDO) into solar wind parameter predictions at L1, providing multi-day advance warning of incoming
+conditions
+- DAGGER-CL: A GRU that takes real-time solar wind measurements (ACE/DSCOVR) and predicts magnetic field perturbations (dBe, dBn) at ~535 ground stations with
+~30-minute lead time
+Together they form a two-stage forecasting pipeline: SHEATH offers early situational awareness from the Sun itself, while DAGGER-CL provides high-fidelity,
+station-level nowcasts once the solar wind is measured in situ. 
 
-Instructions on how to use the SHEATH model are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-GeoCL/blob/main/public/sheath_inference_quickstart.ipynb).
-The DAGGER-CL is more complex to use as it requires a pipeline to be setup, details can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
+### SHEATH model (300 KB)
+- AWS PATH: `hl-geo/models/sheath_latest.pth`
+- Usage instructions are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-GeoCL/blob/main/public/sheath_inference_quickstart.ipynb).
+- Type: 3-layer MLP 
+
+### SHEATH example data (30 KB)
+- AWS Path: `hl-geo/models/examples/`
+- A sub-sample example data ready for usage with SHEATH. Example given in the SHEATH colab notebook likned above.
+
+### DAGGER-CL (120 MB)
+- AWS Path: `hl-geo/models/DAGGER_CL/`
+- Contents: Trained models and checkpoints of the DAGGER-CL pipeline. As this is a continuuous learning pipeline this requires some infrastructure to set up, details can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
 
 # 3 System Requirements
 
