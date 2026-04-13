@@ -24,9 +24,9 @@ Different models may have different train/test/validation sets, this can be expl
 | Processed | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/*zarr/` | | |
 | Raw | [SDO archive] (<http://jsoc.stanford.edu/>) | | |
 | Results | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/*zarr/` | | |
-| Miscellaneous | `s3://` | | |
+<!--| Miscellaneous | `s3://` | | | -->
 
-†
+
 # 2 Dataset Description
 
 <!-- Add a brief description of the dataset and the challenge it addresses -->
