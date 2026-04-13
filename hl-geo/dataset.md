@@ -117,7 +117,4 @@ high-latitude activity), F10.7 solar radio flux, and sunspot number. Used as add
 
 There are two sets of system requirements:
 1. Requirements to *create* the data products. These can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
-2. Requirements for *using* the data products
-   1. To use the raw and processeddata, any modern computer with enough storage is sufficient.
-   2. To use the SHEATH model, any modern computer will do (no CPU necessary)
-   3. The DAGGER-CL model is part of a more complex pipeline, so the requirements depend on how you want to use it. See the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/) for details. 
+2. To use the raw and processeddata, any modern computer with enough storage is sufficient.
