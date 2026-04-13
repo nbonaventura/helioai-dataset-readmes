@@ -4,7 +4,7 @@ Data is stored on Amazon Web Services (AWS). Access is given through the AWS Com
 
 Listing files is done by e.g.:
 ```
-aws s3 ls --no-sign-request s3://nasa-radiant-data/helioai-datasets/<DATASET_NAME>/
+aws s3 ls --no-sign-request s3://nasa-radiant-data/helioai-datasets/hl-solar-wind/<DATASET_NAME>/
 ```
 
 Downloading files is done by e.g.
