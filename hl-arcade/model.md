@@ -74,6 +74,8 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
      - Predicted full-disk magnetograms at ~6-hour lead time
      - Represent the future radial magnetic field state
      - Generated as time-ordered image sequences
+       
+      Interactive UI: https://arcade.spaceml.org/app
 
 These serve as the operational output for:
      - active region tracking
