@@ -82,13 +82,13 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
      models.
   
 3. Residual / error maps (diagnostic outputs)
-     Differences between:
-      - prediction and target
-      - prediction and input
+        Differences between:
+           - prediction and target
+           - prediction and input
 
-     Used to:
-      - quantify model performance
-      - identify spatially structured forecast errors
+          Used to:
+           - quantify model performance
+           - identify spatially structured forecast errors
         
 5. Pixel-wise uncertainty maps
       - Standard deviation estimates per pixel
