@@ -25,8 +25,8 @@ Different models may have different train/test/validation sets, this can be expl
 
 There are three levels of description available for this model:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
-- A detailed description (see the [Technical Memorandum](<LINK_TO_TECHNICAL_MEMORANDUM>)).
-- The full source code used to process the data and create the models (see the [GitHub Repository](<LINK_TO_GITHUB_REPO>)).
+- A detailed description (see the [Technical Memorandum](<https://drive.google.com/file/d/1hsxBvVRLFBoHWV8CKWkSo8HYE1TNG6re/view>)).
+- The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2024-HL-SPI3S-SuNeRF>)).
 
 The SPI3S challenge produced a coupled, physics-informed + deep-learning modeling system designed to estimate solar spectral irradiance from arbitrary heliospheric viewpoints, specifically targeting Mars as a use case. The architecture combines two primary models:
 
@@ -34,8 +34,6 @@ The SPI3S challenge produced a coupled, physics-informed + deep-learning modelin
 2. MEGS-AI (spectral irradiance model) - spectral prediction model
 
 These are integrated into an end-to-end pipeline capable of mapping multi-viewpoint solar observations → 3D solar structure → spectral irradiance at arbitrary locations.
-
-The project models can be found in this [script](https://github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/models.py); and instructions on how to use the models are given in this [script](github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/run_output_rad_xray.py).
 
 ## 2.1 SuNeRF (Solar Neural Radiance Field)
 
