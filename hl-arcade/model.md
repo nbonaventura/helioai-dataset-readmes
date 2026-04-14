@@ -77,9 +77,7 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
        
       Interactive UI: https://arcade.spaceml.org/app
 
-These serve as the operational output for:
-     - active region tracking
-     - downstream flare and CME prediction models
+These serve as the operational output for active region tracking and downstream flare and CME prediction models.
   
 2. Residual / error maps (diagnostic outputs)
      Differences between:
