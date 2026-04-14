@@ -35,7 +35,7 @@ The SPI3S challenge produced a coupled, physics-informed + deep-learning modelin
 
 These are integrated into an end-to-end pipeline capable of mapping multi-viewpoint solar observations → 3D solar structure → spectral irradiance at arbitrary locations.
 
-Instructions on how to use the models are given in this [script](<github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/run_output_rad_xray.py>).
+The project models can be found in this [script](https://github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/models.py); and instructions on how to use the models are given in this [script](github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/run_output_rad_xray.py).
 
 ## 2.1 SuNeRF (Solar Neural Radiance Field)
 
