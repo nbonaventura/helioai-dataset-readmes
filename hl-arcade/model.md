@@ -78,9 +78,10 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
        
       Interactive UI: https://arcade.spaceml.org/app
 
-These serve as the operational output for active region tracking and downstream flare and CME prediction models.
+     These serve as the operational output for active region tracking and downstream flare and CME prediction
+     models.
   
-2. Residual / error maps (diagnostic outputs)
+3. Residual / error maps (diagnostic outputs)
      Differences between:
       - prediction and target
       - prediction and input
@@ -89,7 +90,7 @@ These serve as the operational output for active region tracking and downstream 
       - quantify model performance
       - identify spatially structured forecast errors
         
-3. Pixel-wise uncertainty maps
+5. Pixel-wise uncertainty maps
       - Standard deviation estimates per pixel
       - Represent aleatoric uncertainty in the forecast
 
@@ -97,7 +98,7 @@ These serve as the operational output for active region tracking and downstream 
       - confidence-aware predictions
       - spatially resolved reliability estimates
 
-4. Learned physical parameter estimates (supporting outputs)
+6. Learned physical parameter estimates (supporting outputs)
       - Differential rotation coefficients
       - Meridional flow parameters
 
@@ -105,7 +106,7 @@ These serve as the operational output for active region tracking and downstream 
       - validate physical consistency
       - compare against classical solar models
    
-5. Learned flux emergence fields
+7. Learned flux emergence fields
       - Neural estimates of the source term in the SFT equation
       - Capture:
         - unresolved magnetic flux emergence
