@@ -20,8 +20,8 @@ Different models may have different train/test/validation sets, this can be expl
 
 | Data Product | AWS Path | Size | Download time (@100 Mbps) |
 |-------------|----------|------|---------------------------|
-| Processed | `nasa-radiant-data/helioai-datasets/hl-arcade/2025-hl-arcade-development-landing/aft/lisa/AFT_Baseline/{YYYY}/{NN}/AFTmap*.h5`; SDOMLv2 (?) Zarr file | | |
-<!--| Raw | `<DATASET_NAME>/raw_data/` | | |-->
+| Processed | `s3://nasa-radiant-data/helioai-datasets/hl-arcade/2025-hl-arcade-development-landing/aft/lisa/AFT_Baseline/{YYYY}/{NN}/AFTmap*.h5`; SDOMLv2 (?) Zarr file | | |
+| Raw | `SDO FITS archive` | | |
 | Results | `s3://nasa-radiant-data/helioai-datasets/hl-arcade/2025-hl-arcade-development-features/data/sunpde_output/prod/val_test_*/preds/*png` | | |
 <!--| Miscellaneous | `<DATASET_NAME>/miscellaneous/` | | |-->
 
