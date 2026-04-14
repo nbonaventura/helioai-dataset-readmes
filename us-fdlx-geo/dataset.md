@@ -61,7 +61,7 @@ The raw data for the project includes L1 solar-wind drivers and the ground magne
 # 3. System Requirements
 
 There are two sets of system requirements:
-1. Requirements to *create* the data products. These can be found in the [GitHub Repository](<LINK_TO_GITHUB_REPO>).
+1. Requirements to *create* the data products. These can be found in the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2023-FDL-X-Geo/tree/main>).
 2. Requirements for *using* the data products
 
 
