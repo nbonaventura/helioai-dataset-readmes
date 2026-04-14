@@ -32,8 +32,8 @@ These models were designed to operate together as a multiscale "Sun-to-ground" f
 
 There are three levels of description available for the combined model:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
-- A detailed description (see the [Technical Memorandum](<LINK_TO_TECHNICAL_MEMORANDUM>)).
-- The full source code used to process the data and create the models (see the [GitHub Repository](<LINK_TO_GITHUB_REPO>)).
+- A detailed description (see the [Technical Memorandum](<https://drive.google.com/file/d/1VeiMVwL9DtE1VLwSPQUvgDs3rP5D-P5Y/view>)).
+- The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2023-FDL-X-Geo>)).
 
 <!-- Describe the ML models included. For each model, include:
      - Model architecture
@@ -46,9 +46,9 @@ There are three levels of description available for the combined model:
 
 SHEATH is a solar-wind forecasting model that uses remote solar observations and/or derived solar features to predict solar-wind and interplanetary magnetic field (IMF) conditions at L1 with lead times of multiple days.
 
-Input: solar observations/features (including SDOML-enabled inputs in later integration stages)
-Output: time series of solar-wind parameters (e.g., velocity, IMF components) at L1
-Role: extend forecast horizon beyond what is possible using only in-situ L1 measurements
+ - Input: solar observations/features (including SDOML-enabled inputs in later integration stages)
+ - Output: time series of solar-wind parameters (e.g., velocity, IMF components) at L1
+ - Role: extend forecast horizon beyond what is possible using only in-situ L1 measurements
 
 Conceptually, SHEATH learns the mapping from solar surface/coronal state to heliospheric conditions before those conditions are directly measured.
 
@@ -117,7 +117,7 @@ These outputs are specifically designed to support operational decision-making, 
 # 3. System Requirements
 
 There are two sets of system requirements:
-1. Requirements to *create* the model. These can be found in the [GitHub Repository](<LINK_TO_GITHUB_REPO>).
+1. Requirements to *create* the model. These can be found in the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2023-FDL-X-Geo>).
 2. Requirements for *using* the model.
 
 
