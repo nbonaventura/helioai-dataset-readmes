@@ -20,7 +20,7 @@ You will need to replace `<AWS PATH>` with the path to the file or directory you
 
 There are three levels of description available for this model:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
-- A detailed description (see the [Technical Memorandum](https://helioai.org)).
+- A detailed description (see the [Technical Memorandum](https://helioai.org/dev/artifact/cfaf8127-3065-48b7-9405-c4dc645327b4/details)).
 - The full source code used to process the data and create the models (see the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind)).
 
 ## Project Summary

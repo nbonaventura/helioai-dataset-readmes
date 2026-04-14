@@ -26,7 +26,7 @@ This dataset corresponds to the Decoding Solar Wind Structure challenge from Hel
 
 There are three levels of description available for this dataset:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
-- A detailed description (see the [Technical Memorandum](https://helioai.org)).
+- A detailed description (see the [Technical Memorandum](https://helioai.org/dev/artifact/cfaf8127-3065-48b7-9405-c4dc645327b4/details)).
 - The full source code used to process the data and create the models (see the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind)).
 
 
