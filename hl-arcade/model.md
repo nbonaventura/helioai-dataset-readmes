@@ -57,14 +57,13 @@ A secondary model estimates solar Differential Rotation (DR) and Meridional Flow
 This model:
 - fits physically interpretable parameters
 - validates consistency with known solar physics
-- 
 
 ## 2.3 Model Input
 
 Both the primary and secondary ARCADE mdoels were designed to ingest multi-modal SDO data, including:
 - Magnetograms (primary physical variable)
 - Dopplergrams
-- EUV images ( $171 \AA$ Å, $304 \AA$ Å )
+- EUV images (171 Å, 304 Å)
 - Continuum intensity
 
 These inputs are temporally stacked, co-registered, and normalized into a unified data representation.
@@ -72,45 +71,45 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
 ## 2.3 Model Output
 
 1. Forecast magnetograms (primary output)
-- Predicted full-disk magnetograms at ~6-hour lead time
-- Represent the future radial magnetic field state
-- Generated as time-ordered image sequences
+     - Predicted full-disk magnetograms at ~6-hour lead time
+     - Represent the future radial magnetic field state
+     - Generated as time-ordered image sequences
 
 These serve as the operational output for:
-- active region tracking
-- downstream flare and CME prediction models
+     - active region tracking
+     - downstream flare and CME prediction models
   
 2. Residual / error maps (diagnostic outputs)
-Differences between:
- - prediction and target
- - prediction and input
+     Differences between:
+      - prediction and target
+      - prediction and input
 
-Used to:
- - quantify model performance
- - identify spatially structured forecast errors
- - 
+     Used to:
+      - quantify model performance
+      - identify spatially structured forecast errors
+        
 3. Pixel-wise uncertainty maps
- - Standard deviation estimates per pixel
- - Represent aleatoric uncertainty in the forecast
+      - Standard deviation estimates per pixel
+      - Represent aleatoric uncertainty in the forecast
 
-These outputs provide:
- - confidence-aware predictions
- - spatially resolved reliability estimates
+     These outputs provide:
+      - confidence-aware predictions
+      - spatially resolved reliability estimates
 
 4. Learned physical parameter estimates (supporting outputs)
- - Differential rotation coefficients
- - Meridional flow parameters
+      - Differential rotation coefficients
+      - Meridional flow parameters
 
-Used to:
- - validate physical consistency
- - compare against classical solar models
+     Used to:
+      - validate physical consistency
+      - compare against classical solar models
    
 5. Learned flux emergence fields
- - Neural estimates of the source term in the SFT equation
- - Capture:
-   - unresolved magnetic flux emergence
-   - active region formation dynamics
-   - 
+      - Neural estimates of the source term in the SFT equation
+      - Capture:
+        - unresolved magnetic flux emergence
+        - active region formation dynamics
+     
 # 3. System Requirements
 
 There are two sets of system requirements:
