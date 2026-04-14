@@ -81,12 +81,11 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
      These serve as the operational output for active region tracking and downstream flare and CME prediction
      models.
   
-3. Residual / error maps (diagnostic outputs)
-        Differences between:
-           - prediction and target
-           - prediction and input
+3. Residual / error maps (diagnostic outputs), showing differences between:
+        - prediction and target
+        - prediction and input
 
-          Used to:
+        Used to:
            - quantify model performance
            - identify spatially structured forecast errors
         
