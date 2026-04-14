@@ -65,6 +65,8 @@ For the MEGS-AI stage, the processed data consist of solar image representations
 
 - Feed the synthetic Mars-view images into MEGS-AI to estimate irradiance at Mars and validate those estimates against MAVEN/EUVM observations.
 
+The validation and test sets were cut out events (short periods of time) as defined in in this [script](https://github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/events.py).
+
 ## 2.2 Raw Data
 
 <!-- Appropriate description -->
