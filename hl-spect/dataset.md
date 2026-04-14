@@ -34,7 +34,7 @@ Different models may have different train/test/validation sets, this can be expl
 There are three levels of description available for this dataset:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
 - A detailed description (see the [Technical Memorandum](<https://drive.google.com/file/d/1hsxBvVRLFBoHWV8CKWkSo8HYE1TNG6re/view>)).
-- The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/emassara/2024-hl-radiation-ml/>)).
+- The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2024-HL-SPI3S-SuNeRF>)).
 
 The SPI3S on Mars challenge was designed to estimate solar spectral irradiance from arbitrary viewpoints in the solar system, including Mars, by combining 3D reconstruction of the solar corona with a learned mapping from solar images to irradiance. The underlying scientific motivation is that solar irradiance is strongly shaped by the Sun's three-dimensional, time-evolving atmosphere, but direct measurements are only available from a limited set of spacecraft and viewpoints. Existing approaches can estimate irradiance at Earth or reconstruct coronal structure from a small number of observations, but they do not by themselves provide a full end-to-end system for estimating the Sun's spectral output at other planetary vantage points. The SPI3S dataset and workflow were assembled to solve this problem.
 
@@ -53,7 +53,7 @@ The processed data for SPI3S include a set of ML-ready training products feeding
 
 For the MEGS-AI stage, the processed data consist of solar image representations paired with spectral irradiance targets. The 2024 SPI3S pipeline extends prior MEGS-AI work so that the model estimates not merely a few irradiance bands but the full EUV spectrum. Once SuNeRF-DT has synthesized a novel view of the Sun from Mars or another vantage, that synthetic solar image becomes the processed input to MEGS-AI, which then outputs the irradiance estimate. The memo makes clear that the full pipeline therefore depends on two levels of processed data products: first, geometry-aware multi-viewpoint coronal image sequences for 4D reconstruction, and second, image-to-spectrum training pairs for irradiance inference.
 
-[Data processing steps](https://github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/datasets.py):
+Data processing steps:
 
 - Gather a time sequence of EUV images from multiple instruments and viewpoints, including SDO/ AIA and STEREO/EUVI.
 
@@ -65,7 +65,6 @@ For the MEGS-AI stage, the processed data consist of solar image representations
 
 - Feed the synthetic Mars-view images into MEGS-AI to estimate irradiance at Mars and validate those estimates against MAVEN/EUVM observations.
 
-The validation and test sets were cut out events (short periods of time) as defined in in this [script](https://github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/events.py).
 
 ## 2.2 Raw Data
 
