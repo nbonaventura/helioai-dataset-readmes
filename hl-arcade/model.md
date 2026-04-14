@@ -26,7 +26,8 @@ Different models may have different train/test/validation sets, this can be expl
 There are three levels of description available for this model:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
 - A detailed description (see the [Technical Memorandum](<https://drive.google.com/file/d/1fTI2N0cOcLgbzVkk7QRWpNYnPsgFvwb4/view>)).
-- The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2025-HL-Active-Regions/>)).
+- Work on this project is still ongoing; when completed, the full source code used to process the data and create the models will be linked here.
+ <!--  The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2025-HL-Active-Regions/>)).-->
 
 The ARCADE challenge produced a physics-informed, hybrid deep-learning forecasting model for predicting the short-term evolution of the solar surface magnetic field, with a primary focus on active region dynamics. The system combines data-driven learning from multi-modal SDO observations with a differentiable implementation of the Surface Flux Transport (SFT) equation, forming an end-to-end trainable pipeline.
 
@@ -79,14 +80,7 @@ These inputs are temporally stacked, co-registered, and normalized into a unifie
 
 These serve as the operational output for active region tracking and downstream flare and CME prediction models.
   
-2. Residual / error maps (diagnostic outputs)
-     Differences between:
-      - prediction and target
-      - prediction and input
-
-     Used to:
-      - quantify model performance
-      - identify spatially structured forecast errors
+2. Residual/error maps (diagnostic outputs), showing differences between prediction and target, and prediction and input, used to quantify model performance and identify spatially structured forecast errors.
         
 3. Pixel-wise uncertainty maps
       - Standard deviation estimates per pixel
