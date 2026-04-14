@@ -32,6 +32,7 @@ This project classifies solar wind into four physical types using a two-stage ML
 
 The embeddings are pre-computed and stored in the companion dataset bucket, so inference with the classifier head requires only the head weights (~2 GB) and the embeddings — not the full MAE backbone.
 
+Instructions on how to use the models are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2025-HL-Solar-Wind/blob/main/public/inference_demo.ipynb).
 
 ## 2.1 Solar Wind Classifier — Full Checkpoint (7.1 GB)
 - AWS PATH: `s3://nasa-radiant-data/helioai-datasets/hl-solar-wind/models/models/mae_skip_linear_best.ckpt`
@@ -61,11 +62,6 @@ The embeddings are pre-computed and stored in the companion dataset bucket, so i
     - `metadata_subset.parquet` (39 KB): Labels, spacecraft positions (lon/lat), magnetic footpoint positions, radial distance (raw and normalized), and timestamps.
     - `normalization_stats.json` (< 1 KB): Radial distance normalization parameters (mean, std) computed from the test subset.
 
-## 2.6 Inference Notebook
-- AWS PATH: `s3://nasa-radiant-data/helioai-datasets/hl-solar-wind/models/notebooks/inference_demo.ipynb`
-- A self-contained Google Colab notebook that downloads the head weights and demo subset, runs inference, and visualizes results (confusion matrix, class distributions, probability histograms, time series). No installation of the project codebase is required.
-
-Instructions on how to use the model are given in this [notebook](https://colab.research.google.com/).
 
 
 # 3 System Requirements
