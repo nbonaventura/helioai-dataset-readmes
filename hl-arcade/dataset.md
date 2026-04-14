@@ -20,8 +20,8 @@ Different models may have different train/test/validation sets, this can be expl
 
 | Data Product | AWS Path | Size | Download time (@100 Mbps) |
 |-------------|----------|------|---------------------------|
-| Processed | `s3://nasa-radiant-data/helioai-datasets/hl-arcade/2025-hl-arcade-development-landing/aft/lisa/AFT_Baseline/{YYYY}/{NN}/AFTmap*.h5`; SDOMLv2 (?) Zarr file | | |
-| Raw | `SDO FITS archive` | | |
+| Processed | `s3://nasa-radiant-data/helioai-datasets/hl-arcade/2025-hl-arcade-development-landing/aft/lisa/AFT_Baseline/{YYYY}/{NN}/AFTmap*.h5`; SDOMLv2 Zarr-format files | | |
+| Raw | `SDO archive FITS images` | | |
 | Results | `s3://nasa-radiant-data/helioai-datasets/hl-arcade/2025-hl-arcade-development-features/data/sunpde_output/prod/val_test_*/preds/*png` | | |
 <!--| Miscellaneous | `<DATASET_NAME>/miscellaneous/` | | |-->
 
@@ -33,7 +33,8 @@ Different models may have different train/test/validation sets, this can be expl
 There are three levels of description available for this dataset:
 - A high-level summary (this document) for users to quickly become familiar with the dataset.
 - A detailed description (see the [Technical Memorandum](<https://drive.google.com/file/d/1fTI2N0cOcLgbzVkk7QRWpNYnPsgFvwb4/view>)).
-- The full source code used to process the data and create the models (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2025-HL-Active-Regions/>)).
+- Work on this project is still ongoing; when completed, the full source code used to process the data and create the models will be linked here. 
+<!-- (see the [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2025-HL-Active-Regions/>)).-->
 
 Using high-resolution observations from instruments such as SDO/HMI and SDO/AIA, the ARCADE system combines physics-based Surface Flux Transport modeling with deep learning to characterize the magnetic evolution of solar active regions that can give rise to flares and coronal mass ejections. The hybrid approach extracts key parameters describing magnetic field structure and integrates uncertainty quantification to produce interpretable forecasts. Results demonstrate accurate short-term predictions of active region emergence up to six hours in advance, providing an important first step for downstream space weather models.
 
@@ -43,7 +44,7 @@ The ARCADE forecasting model was designed to work with any of five different dat
 
 <!-- Appropriate description -->
 
-The raw data (i.e., before being processed specifically for input to a machine learning model), includes cleaned and calibrated, science-ready SDO HMI and AIA FITS image data products downloadable from the primary SDO data archive hosted by the Joint Science Operations Center (JSOC) at Stanford University (http://jsoc.stanford.edu/); as well as the Virtual Solar Observatory (VSO) search interface that accesses multiple solar data archives (https://sdac.virtualsolar.org/cgi/search). 
+The raw data (i.e., before being processed specifically for input to a machine learning model), includes cleaned and calibrated, science-ready SDO HMI and AIA FITS image data products downloadable from the primary SDO data archive hosted by the [Joint Science Operations Center (JSOC)](http://jsoc.stanford.edu/) at Stanford University; as well as the [Virtual Solar Observatory (VSO)](https://sdac.virtualsolar.org/cgi/search) search interface that accesses multiple solar data archives. 
 
 ## 2.2 Processed Data
 
@@ -67,7 +68,7 @@ To process and prepare SDO archive data for input to the ARCADE machine-learning
 
  - Removal of geometric effects: Removal of large-scale patterns caused by the Sun’s spherical shape, limb darkening, and other geometric distortions unrelated to physical evolution.
 
- - Re-structuring: SDO data in the form of individual FITS files, corresponding to each of the five independent data types, were combined into a single zarr formatted file, resulting in a data cube with a t_obs axis containing the timestamps of each data set; a channel axis containing the 5 data modes; and x and y axes of length 4096 each to match the pixel dimensions of the data images.
+ - Re-structuring: SDO data in the form of individual FITS files, corresponding to each of the five independent data types, were combined into a single Zarr formatted file, resulting in a data cube with a t_obs axis containing the timestamps of each data set; a channel axis containing the 5 data modes; and x and y axes of length 4096 each to match the pixel dimensions of the data images.
      
 ### 2.2.1 Simulated Validation Data
 
