@@ -53,7 +53,7 @@ The processed data for SPI3S include a set of ML-ready training products feeding
 
 For the MEGS-AI stage, the processed data consist of solar image representations paired with spectral irradiance targets. The 2024 SPI3S pipeline extends prior MEGS-AI work so that the model estimates not merely a few irradiance bands but the full EUV spectrum. Once SuNeRF-DT has synthesized a novel view of the Sun from Mars or another vantage, that synthetic solar image becomes the processed input to MEGS-AI, which then outputs the irradiance estimate. The memo makes clear that the full pipeline therefore depends on two levels of processed data products: first, geometry-aware multi-viewpoint coronal image sequences for 4D reconstruction, and second, image-to-spectrum training pairs for irradiance inference.
 
-Data processing steps:
+[Data processing steps] <https://github.com/emassara/2024-hl-radiation-ml/blob/main/scripts/datasets.py>:
 
 - Gather a time sequence of EUV images from multiple instruments and viewpoints, including SDO/ AIA and STEREO/EUVI.
 
