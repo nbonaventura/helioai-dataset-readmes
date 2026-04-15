@@ -31,20 +31,20 @@ This transforms the system from a static ML model into a self-updating forecasti
 The Thermospheric Density Continuous Learning challenge produces the following forecasting data products:
 
 1. Thermospheric density forecasts
-Predicted density values:
-- at satellite-relevant altitudes,
-- derived from POD-aligned targets
-Forecast horizons:
-- short-term (-100 minutes optimal window)
-- extended forecasts up to ~1 day
+  Predicted density values:
+    - at satellite-relevant altitudes,
+    - derived from POD-aligned targets
+  Forecast horizons:
+    - short-term (-100 minutes optimal window)
+    - extended forecasts up to ~1 day
 
 These outputs are the primary operational product for orbit prediction, drag estimation, and collision avoidance.
 
 2. Time-resolved prediction sequences
-Continuous time-series outputs:
-- rolling forecasts updated as new data arrive
-Generated from:
-- long historical context windows ( ~60,000 minutes = 41 days)
+  Continuous time-series outputs:
+    - rolling forecasts updated as new data arrive
+  Generated from:
+    - long historical context windows ( ~60,000 minutes = 41 days)
 
 
 ## 1.1 Models Access
