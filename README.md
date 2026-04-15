@@ -15,7 +15,9 @@ Currently implemented projects:
 | ionosphere-data-public | Ionosphere-Thermosphere Digital Twin | [real](https://helioai.org/dev/project/849c7860-db0f-47df-9eb9-73474aa83b38/details), [dev](https://helioai.org/admin/api/project/849c7860-db0f-47df-9eb9-73474aa83b38/change) | [real](https://helioai.org/dev/artifact/06a79165-4a8c-42bb-ab79-5ffa67ca5fbe/details), [dev](https://helioai.org/admin/api/researchartifact/06a79165-4a8c-42bb-ab79-5ffa67ca5fbe/change)| --- |
 | hl-flaring-intelligence | Multimodal Flare Prediction | --- | --- | --- |
 | hl-dosi |  Forecasting Radiation Exposure for Human Space Flight | --- | --- | --- | 
+| hl-orchestrator | Orchestrator | --- | --- | --- |
 
 Notes:
-hl-dosi likely difficult. probably dataset-only
+- hl-dosi likely difficult, probably dataset-only.
+- Orchestrator dataset elsewhere, dataset can be linked
 
