@@ -11,7 +11,7 @@ NASA's Solar Dynamics Observatory (SDO) carries the EVE (EUV Variability Experim
 
 **Virtual EVE** restores this lost measurement capability using deep learning. By training on four years of overlapping SDO/AIA imagery and EVE measurements (2010–2014), the model learns to predict what MEGS-A *would* have measured — effectively virtualizing the broken instrument without any hardware repair.
 
-In the ARD-EUV challenge, the Virtual Eve functionality was extended into a more production-ready, deep-learning pipeline trained in supervised fashion using Huber loss, with PyTorch and PyTorch Lightning used for model development and training. The model takes analysis-ready AIA/HMI image products as input and produces inferred irradiance-related outputs. A detailed description of the model may be found in the project [Technical Memorandum](https://drive.google.com/file/d/1WXEELZ1SLRS7wFgTGafXlC8RVgwCCqd9/view)
+In the ARD-EUV challenge, the Virtual Eve functionality was extended into a more production-ready, deep-learning pipeline trained in supervised fashion using Huber loss, with PyTorch and PyTorch Lightning used for model development and training. The model takes analysis-ready AIA/HMI image products as input and produces inferred irradiance-related outputs. A detailed description of the model may be found in the project [Technical Memorandum](https://drive.google.com/file/d/1WXEELZ1SLRS7wFgTGafXlC8RVgwCCqd9/view).
 
 The model files are provided below, along with sample training data for testing purposes. Instructions for accessing the files on Amazon Web Services (AWS) are provided in [Section 2](#2-access-instructions).
 
