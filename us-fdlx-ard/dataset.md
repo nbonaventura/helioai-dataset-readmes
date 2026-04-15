@@ -69,7 +69,7 @@ Different models may have different train/test/validation sets, this can be expl
 
 | Data Product | AWS Path | Size | Download time (@100 Mbps) |
 |-------------|----------|------|---------------------------|
-| Processed | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/AIA.zarr/{YYYY}/{wavelength}/*, s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/HMI.zarr/{YYYY}/B_{xyz}/*, s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/EVE_legacy.zarr/{spec_line}*` | | |
+| Processed | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/AIA.zarr/{YYYY}/{wavelength}/*, s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/HMI.zarr/{YYYY}/B_{xyz}/*, s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/EVE_legacy.zarr/{spec_line}/*` | | |
 | Raw | [SDO archive FITS images](http://jsoc.stanford.edu/) | | |
 <!--| Results | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/` | | |
 | Miscellaneous | `s3://` | | | -->
