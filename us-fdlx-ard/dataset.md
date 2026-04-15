@@ -18,7 +18,7 @@ This dataset has two main components: [raw data](#12-raw-data) and [processed da
 
 The processed data products created by ARD-EUV are the project's main contribution. Rather than leaving users to pull and preprocess disparate SDO streams themselves, the project builds a cloud-based large-scale data ingestion, processing, and ML platform that produces synchronized, analysis-ready products suitable for both direct scientific analysis and downstream ML training. The team launched SDOMLv2, with analysis-ready data for AIA, HMI, and EVE spanning 2010-2023, and built a cloud-scale SDO computational platform. Therefore, the processed data here are the infrastructure layer that turns the raw SDO archive into a reproducible ML dataset.
 
-[Processing steps](https://github.com/SDOML/SDOMLv2/blob/main/README.md):
+[Processing steps](https://github.com/FrontierDevelopmentLab/2023-FDL-X-ARD/blob/main/notebooks/fits2zarrall.py):
 
 - Ingest raw SDO AIA, HMI, and EVE streams over the 2010-2023 interval.
 
@@ -26,8 +26,8 @@ The processed data products created by ARD-EUV are the project's main contributi
 
 - Build synchronized, cloud-accessible analysis-ready products for AIA, HMI, and EVE.
 
-- Use the processed image products together with EVE irradiance targets to train Virtual 
-  EVE Reloaded, an updated EUV spectral irradiance estimator.
+- Use the processed image products together with EVE irradiance targets to train [Virtual 
+  EVE Reloaded](https://github.com/FrontierDevelopmentLab/2023-FDL-X-ARD-EVE), an updated EUV spectral irradiance estimator.
        
 
 ## 1.2 Raw Data
