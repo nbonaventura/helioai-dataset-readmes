@@ -4,7 +4,7 @@ Accurate space-weather modelling depends on sustained, machine-learning-ready ac
 
 This projects uses SDO data from the AIA and HMI instruments, processed into SDOMLv2 format, with 512x512 image resolution and 2-minute cadence, uploaded in a cloud-friendly format. This data is calibrated to Level 1.5 for AIA data (sourced from synoptic images), with HMI data sourced from line-of-sight magnetograms. Reprojection issues from standard HMI processing (NaN values around solar limb) have been corrected and removed from the v2 version of the SDOML dataset. This dataset covers the entirety of solar cycle 24 and is updating on an ongoing basis to cover the current extent of solar cycle 25, making it an ideal training set for machine learning applications that require large spans of time and high cadences.
 
-In addition to the high-level summary of this dataset presented below, a detailed description may be found in the project [Technical Memorandum](<https://drive.google.com/file/d/1WXEELZ1SLRS7wFgTGafXlC8RVgwCCqd9/view?usp=sharing>); and the full source code used to process the data in the project [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2023-FDL-X-ARD>).
+In addition to the high-level summary of this dataset presented below, a detailed description may be found in the project [Technical Memorandum](https://drive.google.com/file/d/1WXEELZ1SLRS7wFgTGafXlC8RVgwCCqd9/view?usp=sharing); and the full source code used to process the data in the project [GitHub Repository](https://github.com/FrontierDevelopmentLab/2023-FDL-X-ARD).
 
 This dataset has two main components: [raw data](#12-raw-data) and [processed data](#11-processed-data).
 
@@ -71,13 +71,13 @@ Different models may have different train/test/validation sets, this can be expl
 |-------------|----------|------|---------------------------|
 | Processed | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/{INSTR}.zarr/{YYYY}/{wavelength}/*` | | |
 | Raw | [SDO archive FITS images](http://jsoc.stanford.edu/) | | |
-<!--| Results | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/*zarr/` | | |
+<!--| Results | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/` | | |
 | Miscellaneous | `s3://` | | | -->
 
 # 3. System Requirements
 
 There are two sets of system requirements:
-1. Requirements to *create* the data products. These can be found in the [GitHub Repository](<LINK_TO_GITHUB_REPO>).
+1. Requirements to *create* the data products. These can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2023-FDL-X-ARD).
 2. Requirements for *using* the data products
 
 
