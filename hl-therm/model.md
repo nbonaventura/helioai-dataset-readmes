@@ -38,7 +38,7 @@ Instructions for accessing the following files on Amazon Web Services (AWS) are 
 - AWS PATH: `hl-therm/models/karman_tft_forecast_mape_14.936_params_1074865.torch`
 - Usage Instructions: Instructions on how to use the TFT model are given in this [colab notbook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_forecast_example.ipynb).
 - Type: Temporal Fusion Transformer — forecasts density using ~7 days of space-weather history
-Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable selection networks)
+- Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable selection networks)
 - Accuracy: 14.94% MAPE on validation set
 
 ### Nowcasting Model (0.1 MB)
