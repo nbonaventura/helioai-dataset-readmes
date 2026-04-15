@@ -22,7 +22,7 @@ Processing steps:
 
  - Align them with POD-derived thermospheric density targets.
 
- - Construct model-ready forecasting samples using a historical window and a chosen lead-time/forecast window. The best public configuration used:
+ - Construct model-ready forecasting samples using a historical window and a chosen lead-time/forecast window. 
       - historical window: ~60,000 minutes
  	  - forecast window: 100 minutes.
 
@@ -33,7 +33,8 @@ Processing steps:
  - Validate on held-out intervals and major storm cases such as the May 2024 Gannon superstorm.
 
 
-Instructions for accessing the following datasets are provided in Section 2, below. 
+
+Instructions for accessing the following datasets on Amazon Web Services (AWS) are provided in Section 2, below. 
 
 ### OMNIWEB data (3.1 GB)
 - AWS PATH: `hl-therm/processed_data/physical-drivers-processed/OMNIWEB/{YYYY}/{SUBSET}_omni_{YYYY}_{MM}.parquet`
