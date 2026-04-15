@@ -1,5 +1,7 @@
 # 1 Dataset Description
 
+Accurate space-weather modelling depends on sustained, machine-learning-ready access to Solar Dynamics Observatory (SDO) data, particularly EUV measurements. While SDO’s AIA, HMI, and EVE instruments have delivered a detailed solar record since 2010, the scale, heterogeneity, and distribution of the raw data have historically limited systematic ML exploitation. SDOML addressed this by introducing standardized, calibrated, and spatially normalized data products optimized for machine learning based methods at 512x512 resolution. The Analysis Read Data (ARD) EUV project extends this foundation with [SDOMLv2](https://github.com/SDOML/SDOMLv2), incorporating improved calibration, broader temporal coverage, and enhanced data quality across AIA, HMI, and available EVE channels. A key limitation remains the loss of the MEGS-A EUV irradiance sensor in 2014; this is mitigated through a new Virtual-EVE model that reconstructs EUV spectra from imaging data. Together, SDOMLv2 and Virtual-EVE provide a scalable, cloud-enabled framework for applying machine learning to SDO data.
+
 This projects uses SDO data from the AIA and HMI instruments, processed into SDOMLv2 format, with 512x512 image resolution and 2-minute cadence, uploaded in a cloud-friendly format. This data is calibrated to Level 1.5 for AIA data (sourced from synoptic images), with HMI data sourced from line-of-sight magnetograms. Reprojection issues from standard HMI processing (NaN values around solar limb) have been corrected and removed from the v2 version of the SDOML dataset. This dataset covers the entirety of solar cycle 24 and is updating on an ongoing basis to cover the current extent of solar cycle 25, making it an ideal training set for machine learning applications that require large spans of time and high cadences.
 
 In addition to the high-level summary of this dataset presented below, a detailed description may be found in the project [Technical Memorandum](<https://drive.google.com/file/d/1WXEELZ1SLRS7wFgTGafXlC8RVgwCCqd9/view?usp=sharing>); and the full source code used to process the data in the project [GitHub Repository](<https://github.com/FrontierDevelopmentLab/2023-FDL-X-ARD>).
@@ -69,8 +71,8 @@ Different models may have different train/test/validation sets, this can be expl
 |-------------|----------|------|---------------------------|
 | Processed | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/*zarr/` | | |
 | Raw | [SDO archive FITS images](http://jsoc.stanford.edu/) | | |
-| Results | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/*zarr/` | | |
-<!--| Miscellaneous | `s3://` | | | -->
+<!--| Results | `s3://nasa-radiant-data/helioai-datasets/us-fdlx-ard/sdomlv2a/*zarr/` | | |
+| Miscellaneous | `s3://` | | | -->
 
 # 3. System Requirements
 
