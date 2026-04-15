@@ -34,7 +34,7 @@ Processing steps:
 
 
 
-Instructions for accessing the following datasets on Amazon Web Services (AWS) are provided in Section 2, below. 
+Instructions for accessing the following datasets on Amazon Web Services (AWS) are provided in Section 2.
 
 ### OMNIWEB data (3.1 GB)
 - AWS PATH: `hl-therm/processed_data/physical-drivers-processed/OMNIWEB/{YYYY}/{SUBSET}_omni_{YYYY}_{MM}.parquet`
