@@ -4,7 +4,7 @@ The Thermospheric Density Continuous Learning challenge was designed to push the
 
 The dataset used is the backbone for Karman-CL -- a continual-learning version of the Karman framework that combines live data ingestion, cloud storage, and transformer-based forecasting models -- and is therefore designed both for scientific understanding of thermospheric response and for operational ML deployment. 
 
-<!-- This dataset corresponds to Thermospheric Density Continual Learning challenge. It is what was used to create the 2024 iteration of KARMAN. There are two main components: raw data and processed data.
+<!-- This dataset corresponds to Thermospheric Density Continual Learning challenge. It is what was used to create the 2024 iteration of KARMAN. There are two main components: raw data and processed data.-->
 
 In addition to the high-level summary of this dataset presented below, a detailed description may be found in the project [Technical Memorandum](https://helioai.org/dev/artifact/04b6c417-c722-484c-a668-9426bbbb0cd7/details)); and the full source code used to process the data in the project [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-hl-thermo-cl)).
 
