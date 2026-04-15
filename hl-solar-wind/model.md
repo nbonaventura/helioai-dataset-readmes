@@ -11,10 +11,10 @@ The key models from the project include:
 1. CIPHER Pipeline:
 A semi-automated framework for time series analysis that combines compression, clustering, and human-in-the-loop labeling to generate labeled datasets.
 
-2. SDO-based Prediction Model:
+3. SDO-based Prediction Model:
 A deep learning model built on top of a foundation model (SDOFM) trained on solar disk imagery. This model predicts solar wind structure classes at spacecraft locations using only solar images.
 
-3. Neural Field Model:
+4. Neural Field Model:
 A model that extends predictions across the inner heliosphere, enabling spatially continuous predictions of solar wind structures beyond the original spacecraft trajectory.
 
 These models demonstrate the ability to link solar surface activity with in-situ solar wind measurements, enabling the prediction of solar wind conditions throughout the inner heliosphere.
@@ -23,10 +23,12 @@ A detailed description of the models may be found in the project [Technical Memo
 
 A notebook demonstrating inference with the trained solar wind classifier is available in this [notebook](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind/blob/main/public/inference_demo.ipynb).
 
+The model files may be accessed on Amazon Web Services (AWS) as shown in Section 2.
+**AWS PATH:** `2025-hl-solar-wind-development-features/cipher/valmir/*pkl, 2025-hl-solar-wind-development-features/psp-understanding/runs/*keras'
 
 # 2. Access Instructions
 
-Models are is stored on Amazon Web Services (AWS). Access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+Models are stored on Amazon Web Services (AWS). Access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 Listing files is done by e.g.:
 ```
@@ -43,6 +45,7 @@ You will need to replace `<AWS PATH>` with the path to the file or directory you
 The ideal case is that within each of these categories, data are uniformly structured.
 For example, "processed" may correspond to train/test/validation data, in which we expect a tabular format (consistent column names, different rows) for each training example. 
 Different models may have different train/test/validation sets, this can be explained -->
+
 # 3. System Requirements
 
 There are two sets of system requirements:
