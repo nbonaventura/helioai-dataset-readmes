@@ -121,4 +121,4 @@ You will need to replace `<AWS PATH>` with the path to the data sample you want 
 
 There are two sets of system requirements:
 1. Requirements to *create* the data products. These can be found in the [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
-2. To use the raw and processeddata, any modern computer with enough storage is sufficient.
+2. To use the raw and processed data, any modern computer with enough storage is sufficient.
