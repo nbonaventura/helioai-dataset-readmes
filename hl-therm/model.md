@@ -28,7 +28,7 @@ Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable sele
 
 ### Nowcasting Model (0.1 MB)
 - AWS PATH: `hl-therm/models/karman_mlp_nowcast_mape_15.14_params_35585.torch` 
-- Usage Instructions: Instructions on how to use the nowcasting model are given in this [colab notbook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_nowcast_example.ipynb). Note this notebook is for instructional use only.
+- Usage Instructions: Instructions on how to use the nowcasting model are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_nowcast_example.ipynb). Note this notebook is for instructional use only.
 - Type: Nowcasting MLP — predicts density at the current time using instantaneous features only (no time-series history)
 - Architecture: 35,585 parameters — a small feedforward network
 - Approach: log_exp_residual — predicts a correction (residual) on top of an exponential atmosphere baseline, in log-space
