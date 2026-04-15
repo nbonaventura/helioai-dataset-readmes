@@ -4,7 +4,7 @@ The GEO-CLOAK Heliolab 2024 challenge was designed to move geoeffectiveness fore
 
 The dataset behind GEO-CLOAK is a coordinated collection of solar, solar-wind, and ground-perturbation data products spanning multiple forecast horizons. SHEATH uses remote solar measurements to forecast solar-wind conditions at L1 with lead times of multiple days, while DAGGER-CL then refines those forecasts using higher-fidelity in-situ L1 data to produce global ground geomagnetic perturbation estimates with lead times of tens of minutes. This means the processed data product is a multi-stage forecasting dataset connecting solar-disk observations, L1 solar-wind parameters, and ground geomagnetic responses into a unified operational pipeline.
 
-This dataset has two main components: [raw data](#12-raw-data) and [processed data](#11-raw-data).
+This dataset has two main components: [raw data](#12-raw-data) and [processed data](#11-processed-data).
 
 In addition to the high-level summary of this dataset presented below, a detailed description may be found in the project [Technical Memorandum](https://helioai.org/dev/artifact/89d1911b-7803-44e7-b792-076edb2dc5ed/details)); and the full source code used to process the data in the project [GitHub Repository](https://github.com/FrontierDevelopmentLab/2024-HL-GeoCL/).
 
