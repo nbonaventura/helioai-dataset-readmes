@@ -1,8 +1,36 @@
-## 1 Models Description
+# 1 Models Description
 
 The Thermospheric Density Continuous Learning challenge produced a production-oriented, continual-learning forecasting system built around an extension of the Karman thermospheric density modeling framework, referred to as Karman-CL (Continuous Learning). Rather than introducing a single new model architecture, the project's primary innovation lies in combining multiple ML model types with a continual-learning orchestration layer, enabling adaptive updating as new data arrive.
 
-Two ML models are included: a forecasting model and a nowcasting model. The forecasting model is the main product of this work, and is intended to be used for forecasting the thermospheric density. The nowcasting model is a simple model that is not intended for any use other than for instructional purposes. The model files are provided below, along with a sample dataset for testing purposes. 
+At its core, Karman-CL supports a model zoo of candidate thermospheric density predictors, including:
+  - Feedforward Neural Networks (FFNNs)
+  - Convolutional Neural Networks (CNNs)
+  - Long Short-Term Memory (LSTM) models
+
+These models operate on time-series inputs of:
+  - solar and space-weather drivers (e.g., OMNI, SOHO),
+  - historical thermospheric density values derived from POD data.
+
+The system evaluates multiple models in parallel and maintains a top-K set of best-performing models, rather than relying on a single fixed architecture.
+
+The defining feature of the challenge is the continual-learning control system, which wraps around the model zoo and governs:
+  - Data ingestion and preprocessing (live pipeline)
+  - Distribution-shift detection (comparing new data to historical distributions)
+  - Retraining triggers
+  - Model selection and replacement
+
+The workflow is:
+  - New data arrive via live ingestion
+  - Data are compared to existing training distribution
+  - If no shift → existing models perform inference
+  - If shift detected → candidate models retrained
+  - If new models outperform → they replace models in the top-K set
+
+This transforms the system from a static ML model into a self-updating forecasting system.
+
+## 1.1 Model Access
+
+Two ML models are included here: a forecasting model and a nowcasting model. The forecasting model is the main product of this work, and is intended to be used for forecasting the thermospheric density. The nowcasting model is a simple model that is not intended for any use other than for instructional purposes. The model files are provided below, along with a sample dataset for testing purposes. 
 
 Instructions for accessing the following files on Amazon Web Services (AWS) are provided in [Section 2](#2-access-instructions).
 
