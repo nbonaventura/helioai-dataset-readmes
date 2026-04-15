@@ -1,23 +1,10 @@
-# 1 Access Instructions
+## 1 Models Description
 
-Models are stored on Amazon Web Services (AWS). Access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+The Thermospheric Density Continuous Learning challenge produced a production-oriented, continual-learning forecasting system built around an extension of the Karman thermospheric density modeling framework, referred to as Karman-CL (Continuous Learning). Rather than introducing a single new model architecture, the project's primary innovation lies in combining multiple ML model types with a continual-learning orchestration layer, enabling adaptive updating as new data arrive.
 
-Listing files is done by e.g.:
-```
-aws s3 ls --no-sign-request s3://nasa-radiant-data/helioai-datasets/hl-therm/ 
-```
+Two ML models are included: a forecasting model and a nowcasting model. The forecasting model is the main product of this work, and is intended to be used for forecasting the thermospheric density. The nowcasting model is a simple model that is not intended for any use other than for instructional purposes. The model files are provided below, along with a sample dataset for testing purposes. 
 
-Downloading files is done by e.g. 
-```
-aws s3 cp --no-sign-request s3://nasa-radiant-data/helioai-datasets/<AWS PATH> <LOCAL PATH> --recursive
-```
-You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data).
-
-
-
-## 2 Models Description
-
-Two ML models are included: a forecasting model and a nowcasting model. Additionally, some sample data is included for testing purposes. The forecasting model is the main product of this work, and is intended to be used for forecasting the thermospheric density. The nowcasting model is a simple model that is not intended for any use other than for instructional purposes.
+Instructions for accessing the following files on Amazon Web Services (AWS) are provided in [Section 2](#2-access- -instructions).
 
 ### TFT Forecasting Model (4.5 MB)
 - AWS PATH: `hl-therm/models/karman_tft_forecast_mape_14.936_params_1074865.torch`
@@ -49,3 +36,20 @@ Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable sele
 | `nrlmsise00` | `(N,)` | NRLMSISE-00 baseline density (for comparison) |
 | `dates` | list of N strings | Timestamp for each sample |
 | `normalization_dict` | dict | The scaling parameters (min/max, quantile transforms) used during preprocessing |
+
+
+# 2 Access Instructions
+
+Models are stored on Amazon Web Services (AWS), and access is given through the AWS Command Line Interface (CLI). Instructions on how to install and use are given in the [AWS CLI documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
+Listing files is done by e.g.:
+```
+aws s3 ls --no-sign-request s3://nasa-radiant-data/helioai-datasets/hl-therm/ 
+```
+
+Downloading files is done by e.g. 
+```
+aws s3 cp --no-sign-request s3://nasa-radiant-data/helioai-datasets/<AWS PATH> <LOCAL PATH> --recursive
+```
+You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data).
+
