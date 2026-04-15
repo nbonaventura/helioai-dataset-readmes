@@ -9,7 +9,7 @@ At its core, Karman-CL supports a model zoo of candidate thermospheric density p
 
 These models operate on time-series inputs of:
   - solar and space-weather drivers (e.g., OMNI, SOHO),
-  - historical thermospheric density values derived from POD data.
+  - historical thermospheric density values derived from precise orbit determination (POD) data.
 
 The system evaluates multiple models in parallel and maintains a top-K set of best-performing models, rather than relying on a single fixed architecture.
 
