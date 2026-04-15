@@ -19,7 +19,9 @@ A model that extends predictions across the inner heliosphere, enabling spatiall
 
 These models demonstrate the ability to link solar surface activity with in-situ solar wind measurements, enabling the prediction of solar wind conditions throughout the inner heliosphere.
 
-A detailed description of the models may be found in the project [Technical Memorandum](); and the full source code used to train and run the models in the project [GitHub Repository](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind/).
+A detailed description of the models may be found in the project [Technical Memorandum](); and the full source code used to train and run the models in the project [GitHub Repository](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind/). 
+
+A notebook demonstrating inference with the trained solar wind classifier is available in this [notebook](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind/blob/main/public/inference_demo.ipynb).
 
 
 # 2. Access Instructions
