@@ -4,7 +4,7 @@ The Thermospheric Density Continuous Learning challenge produced a production-or
 
 Two ML models are included: a forecasting model and a nowcasting model. The forecasting model is the main product of this work, and is intended to be used for forecasting the thermospheric density. The nowcasting model is a simple model that is not intended for any use other than for instructional purposes. The model files are provided below, along with a sample dataset for testing purposes. 
 
-Instructions for accessing the following files on Amazon Web Services (AWS) are provided in [Section 2](#2-access- -instructions).
+Instructions for accessing the following files on Amazon Web Services (AWS) are provided in [Section 2](#2-access-instructions).
 
 ### TFT Forecasting Model (4.5 MB)
 - AWS PATH: `hl-therm/models/karman_tft_forecast_mape_14.936_params_1074865.torch`
