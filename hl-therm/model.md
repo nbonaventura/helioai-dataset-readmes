@@ -34,7 +34,7 @@ Two ML models are included here: a forecasting model and a nowcasting model. The
 
 Instructions for accessing the following files on Amazon Web Services (AWS) are provided in [Section 2](#2-access-instructions).
 
-### TFT Forecasting Model (4.5 MB)
+### Temporal Fusion Transformer (TFT) Forecasting Model (4.5 MB)
 - AWS PATH: `hl-therm/models/karman_tft_forecast_mape_14.936_params_1074865.torch`
 - Usage Instructions: Instructions on how to use the TFT model are given in this [colab notbook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_forecast_example.ipynb).
 - Type: Temporal Fusion Transformer — forecasts density using ~7 days of space-weather history
