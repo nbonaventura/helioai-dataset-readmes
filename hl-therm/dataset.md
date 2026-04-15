@@ -20,7 +20,7 @@ Processing steps:
 
  - Preprocess and store those data in a cloud environment for ML readiness.
 
- - Align them with POD-derived thermospheric density targets.
+ - Align them with precise orbit determination (POD)-derived thermospheric density targets.
 
  - Construct model-ready forecasting samples using a historical window and a chosen lead-time/forecast window. 
       - historical window: ~60,000 minutes
