@@ -36,14 +36,14 @@ Instructions for accessing the following files on Amazon Web Services (AWS) are 
 
 ### Temporal Fusion Transformer (TFT) Forecasting Model (4.5 MB)
 - AWS PATH: `hl-therm/models/karman_tft_forecast_mape_14.936_params_1074865.torch`
-- Usage Instructions: Instructions on how to use the TFT model are given in this [colab notbook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_forecast_example.ipynb).
+- Usage Instructions: Instructions on how to use the TFT model are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_forecast_example.ipynb).
 - Type: Temporal Fusion Transformer — forecasts density using ~7 days of space-weather history
 - Architecture: 1,074,865 parameters (LSTMs + multi-head attention + variable selection networks)
 - Accuracy: 14.94% MAPE on validation set
 
 ### Nowcasting Model (0.1 MB)
 - AWS PATH: `hl-therm/models/karman_mlp_nowcast_mape_15.14_params_35585.torch` 
-- Usage Instructions: Instructions on how to use the nowcasting model are given in this [colab notbook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_nowcast_example.ipynb). Note this notebook is for instructional use only.
+- Usage Instructions: Instructions on how to use the nowcasting model are given in this [colab notebook](https://colab.research.google.com/github/FrontierDevelopmentLab/2024-HL-Thermo-CL/blob/main/public/inference_nowcast_example.ipynb). Note this notebook is for instructional use only.
 - Type: Nowcasting MLP — predicts density at the current time using instantaneous features only (no time-series history)
 - Architecture: 35,585 parameters — a small feedforward network
 - Approach: log_exp_residual — predicts a correction (residual) on top of an exponential atmosphere baseline, in log-space

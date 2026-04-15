@@ -68,7 +68,7 @@ To process and prepare SDO archive data for input to the ARCADE machine-learning
 
  - Removal of geometric effects: Removal of large-scale patterns caused by the Sun’s spherical shape, limb darkening, and other geometric distortions unrelated to physical evolution.
 
- - Re-structuring: SDO data in the form of individual FITS files, corresponding to each of the five independent data types, were combined into a single Zarr formatted file, resulting in a data cube with a t_obs axis containing the timestamps of each data set; a channel axis containing the 5 data modes; and x and y axes of length 4096 each to match the pixel dimensions of the data images.
+ - Re-structuring: SDO data in the form of individual FITS files, corresponding to each of the five independent data types, were combined into a single Zarr-formatted file, resulting in a data cube with a t_obs axis containing the timestamps of each data set; a channel axis containing the 5 data modes; and x and y axes of length 4096 each to match the pixel dimensions of the data images.
      
 ### 2.2.1 Simulated Validation Data
 
