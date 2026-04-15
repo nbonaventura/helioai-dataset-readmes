@@ -24,8 +24,8 @@ A detailed description of the models may be found in the project [Technical Memo
 A notebook demonstrating inference with the trained solar wind classifier is available in this [notebook](https://github.com/FrontierDevelopmentLab/2025-HL-Solar-Wind/blob/main/public/inference_demo.ipynb).
 
 The model files may be accessed on Amazon Web Services (AWS) as shown in Section 2.
-**AWS PATH:** `2025-hl-solar-wind-development-features/cipher/valmir/*pkl`
-**AWS PATH:** `2025-hl-solar-wind-development-features/psp-understanding/runs/*keras`
+
+**AWS PATH:** `2025-hl-solar-wind-development-features/cipher/valmir/*pkl, 2025-hl-solar-wind-development-features/psp-understanding/runs/*keras`
 
 # 2. Access Instructions
 
@@ -56,7 +56,7 @@ There are two sets of system requirements:
 
 | Component | Minimum |
 |-----------|---------|
-| **CPU** | |
-| **RAM** | |
-| **GPU** | |
-| **Storage** | |
+| **CPU** | Modern multi-core CPU |
+| **RAM** | 16 GB recommended |
+| **GPU** | Optional (required for model training, not for inference) |
+| **Storage** | > 10 TB recommended for full dataset (raw + processed) |
