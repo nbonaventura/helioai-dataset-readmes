@@ -13,7 +13,7 @@ NASA's Solar Dynamics Observatory (SDO) carries the EVE (EUV Variability Experim
 
 In the ARD-EUV challenge, the Virtual Eve functionality was extended into a more production-ready, deep-learning pipeline trained in supervised fashion using Huber loss, with PyTorch and PyTorch Lightning used for model development and training. The model takes analysis-ready AIA/HMI image products as input and produces inferred irradiance-related outputs. 
 
-Instructions for accessing the following files on Amazon Web Services (AWS) are provided in [Section 2](#2-access-instructions).
+The model files are provided below, along with sample training data for testing purposes. Instructions for accessing the files on Amazon Web Services (AWS) are provided in [Section 2](#2-access-instructions).
 
 ## 1.1 Virtual EVE Hybrid Model (42 MB)
 
