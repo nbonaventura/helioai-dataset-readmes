@@ -30,7 +30,7 @@ The model files are provided below, along with sample training data for testing 
 
 ### Model Checkpoint Contents
 
-The model checkpoint file, containing a snapshot of model weights, parameters, and optimizer state during training, is a PyTorch dictionary containing:
+The model checkpoint file, containing a snapshot of model weights and parameters during training, is a PyTorch dictionary containing:
 
 | Key | Description |
 |-----|-------------|
