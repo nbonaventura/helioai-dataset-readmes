@@ -16,8 +16,9 @@ Currently implemented projects:
 | hl-flaring-intelligence | Multimodal Flare Prediction | --- | --- | --- |
 | hl-dosi |  Forecasting Radiation Exposure for Human Space Flight | --- | --- | --- | 
 | hl-orchestrator | Orchestrator | --- | --- | --- |
+| us-fdlx-termo| Thermospheric Drag: EUV Irradiance and Thermospheric Density | --- | --- | --- |
 
 Notes:
 - hl-dosi likely difficult, probably dataset-only.
 - Orchestrator dataset elsewhere, dataset can be linked
-
+- us-fdlx-termo superseeded by later projects
