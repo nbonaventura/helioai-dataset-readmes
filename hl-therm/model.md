@@ -79,5 +79,5 @@ Downloading files is done by e.g.
 ```
 aws s3 cp --no-sign-request s3://nasa-radiant-data/helioai-datasets/<AWS PATH> <LOCAL PATH> --recursive
 ```
-You will need to replace `<AWS PATH>` with the path to the data sample you want to download (see table) and `<LOCAL PATH>` with the path on your local machine where you want to save the data).
+You will need to replace `<AWS PATH>` with the path to the data sample you want to download and `<LOCAL PATH>` with the path on your local machine where you want to save the data).
 
