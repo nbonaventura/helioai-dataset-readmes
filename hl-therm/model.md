@@ -26,9 +26,28 @@ The workflow is:
   - If shift detected → candidate models retrained
   - If new models outperform → they replace models in the top-K set
 
-This transforms the system from a static ML model into a self-updating forecasting system.
+This transforms the system from a static ML model into a self-updating forecasting system. 
 
-## 1.1 Model Access
+The Thermospheric Density Continuous Learning challenge produces the following forecasting data products:
+
+1. Thermospheric density forecasts
+Predicted density values:
+- at satellite-relevant altitudes,
+- derived from POD-aligned targets
+Forecast horizons:
+- short-term (-100 minutes optimal window)
+- extended forecasts up to ~1 day
+
+These outputs are the primary operational product for orbit prediction, drag estimation, and collision avoidance.
+
+2. Time-resolved prediction sequences
+Continuous time-series outputs:
+- rolling forecasts updated as new data arrive
+Generated from:
+- long historical context windows ( ~60,000 minutes = 41 days)
+
+
+## 1.1 Models Access
 
 Two ML models are included here: a forecasting model and a nowcasting model. The forecasting model is the main product of this work, and is intended to be used for forecasting the thermospheric density. The nowcasting model is a simple model that is not intended for any use other than for instructional purposes. The model files are provided below, along with a sample dataset for testing purposes. 
 
