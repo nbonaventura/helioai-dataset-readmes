@@ -14,5 +14,8 @@ Currently implemented projects:
 | hl-solar-wind | Decoding Solar Wind Structure | [real](https://helioai.org/dev/project/32b179b6-5064-456d-9a5f-b9acd51ba52e/details), [dev](https://helioai.org/admin/api/project/32b179b6-5064-456d-9a5f-b9acd51ba52e/change) | [real](https://helioai.org/dev/artifact/558169a3-d87b-48b3-9a50-d09ec00eae5f/details), [dev](https://helioai.org/admin/api/researchartifact/558169a3-d87b-48b3-9a50-d09ec00eae5f/change) | [real](https://helioai.org/dev/artifact/07f8e53f-7658-4a03-88b4-566137e1720f/details), [dev](https://helioai.org/admin/api/researchartifact/07f8e53f-7658-4a03-88b4-566137e1720f/change/) |
 | ionosphere-data-public | Ionosphere-Thermosphere Digital Twin | [real](https://helioai.org/dev/project/849c7860-db0f-47df-9eb9-73474aa83b38/details), [dev](https://helioai.org/admin/api/project/849c7860-db0f-47df-9eb9-73474aa83b38/change) | [real](https://helioai.org/dev/artifact/06a79165-4a8c-42bb-ab79-5ffa67ca5fbe/details), [dev](https://helioai.org/admin/api/researchartifact/06a79165-4a8c-42bb-ab79-5ffa67ca5fbe/change)| --- |
 | hl-flaring-intelligence | Multimodal Flare Prediction | --- | --- | --- |
+| hl-dosi |  Forecasting Radiation Exposure for Human Space Flight | --- | --- | --- | 
 
+Notes:
+hl-dosi likely difficult. probably dataset-only
 
