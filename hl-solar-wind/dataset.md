@@ -2,11 +2,6 @@
 
 <!-- Add a brief description of the dataset and the challenge it addresses -->
 
-There are three levels of description available for this dataset:
-- A high-level summary (this document) for users to quickly become familiar with the dataset.
-- A detailed description (see the [Technical Memorandum](<LINK_TO_TECHNICAL_MEMORANDUM>)).
-- The full source code used to process the data and create the models (see the [GitHub Repository](<LINK_TO_GITHUB_REPO>)).
-
 This dataset supports the Frontier Development Lab Heliolab 2025 'Decoding Solar Wind Structure' challenge, which aims to identify, classify, and predict solar wind phenomena using a combination of in-situ spacecraft measurements and solar disk observations.
 
 The dataset integrates multi-source data from the Parker Solar Probe (PSP) mission, solar imagery from the Solar Dynamics Observatory (SDO), and derived machine learning features and labels. It includes raw time series measurements, processed machine-learning-ready datasets, and trained models.
